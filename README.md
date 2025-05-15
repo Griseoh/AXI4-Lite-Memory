@@ -9,3 +9,9 @@ This project implements a synthesizable AXI Lite-compliant memory-mapped slave i
 - **Memory**: 4 blocks × 64 × 32-bit
 - **Compliance**: Full channel handshake adherence (AW, W, B, AR, R)
 - **Testbench**: Handshake-accurate simulation of reads/writes
+
+## Simulation Waveform
+
+![simresults](https://github.com/user-attachments/assets/61cd4c84-b977-4450-9eef-75f9835569ed)
+
+---
