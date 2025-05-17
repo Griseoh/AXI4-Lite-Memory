@@ -12,8 +12,10 @@ This project implements a synthesizable AXI Lite-compliant memory-mapped slave i
 
 ## Simulation Waveform
 
-![simresults](https://github.com/user-attachments/assets/d723aef5-c62b-474f-ab62-d3ef587f2a25)
+![simresults](https://github.com/user-attachments/assets/203beb6d-cb09-4dc9-99a1-561e6c33d9b3)
 
+## Test Log
 
+![testlogs](https://github.com/user-attachments/assets/952bf1a9-3fa5-4ebf-b599-d58e896fda0e)
 
 ---
