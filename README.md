@@ -12,7 +12,7 @@ This project implements a synthesizable AXI Lite-compliant memory-mapped slave i
 
 ## Architechure
 
-![AXI4-Lite memory](https://github.com/user-attachments/assets/3fbb2147-146c-42ee-8091-e2ce3fbdfaae)
+![AXI4-Lite memory](https://github.com/user-attachments/assets/d4aebddb-127a-4494-aa2a-88a3e47d048f)
 
 ## Simulation Waveform
 
