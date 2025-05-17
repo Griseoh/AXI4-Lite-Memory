@@ -72,7 +72,7 @@ module axi_lite_memory #(parameter DW = 32)
     end
            
     // Handshake Flags
-    reg aw_handshake, w_handshake;
+    reg aw_handshake, w_handshake, ar_handshake;
     
     // Channel Registers
     reg [31:0] write_addr;
@@ -153,8 +153,6 @@ module axi_lite_memory #(parameter DW = 32)
             end
             if(S_AXIL_BVALID && S_AXIL_BREADY)begin
                 S_AXIL_BVALID <= 0;
-                w_handshake <= 0;
-                aw_handshake <= 0;
             end
         end
     end
@@ -164,11 +162,16 @@ module axi_lite_memory #(parameter DW = 32)
         if(!ARESETN)begin
             S_AXIL_ARREADY <= 0;
             read_addr <= 0;
+            ar_handshake <= 0;
         end
         else begin
             S_AXIL_ARREADY <= (!S_AXIL_ARREADY && S_AXIL_ARVALID && !S_AXIL_RVALID);
             if(S_AXIL_ARREADY && S_AXIL_ARVALID)begin
                 read_addr <= S_AXIL_ARADDR;
+                ar_handshake <= 1;
+            end
+            else if (S_AXIL_RVALID && S_AXIL_RREADY)begin
+                ar_handshake <= 0;
             end
         end
     end
@@ -181,7 +184,7 @@ module axi_lite_memory #(parameter DW = 32)
             S_AXIL_RDATA <= 32'h00000000;
         end
         else begin
-            if(S_AXIL_ARREADY && S_AXIL_ARVALID && !S_AXIL_RVALID)begin
+            if(ar_handshake && !S_AXIL_RVALID)begin
                 case (read_addr[7:6])
                     2'b00: S_AXIL_RDATA <= block0[read_addr[5:0]];
                     2'b01: S_AXIL_RDATA <= block1[read_addr[5:0]];
