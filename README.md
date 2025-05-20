@@ -14,9 +14,19 @@ This project implements a synthesizable AXI Lite-compliant memory-mapped slave i
 
 ![AXI4-Lite memory](https://github.com/user-attachments/assets/d4aebddb-127a-4494-aa2a-88a3e47d048f)
 
+## Schematic
+
+### Module
+
+![memmodule](https://github.com/user-attachments/assets/c4b1e0dc-3266-4384-b2a5-667c56e807c1)
+
+### Memory Blocks
+
+![memblock](https://github.com/user-attachments/assets/6f72721e-32fa-4480-bc8d-01efc61602dd)
+
 ## Simulation Waveform
 
-![simresults](https://github.com/user-attachments/assets/203beb6d-cb09-4dc9-99a1-561e6c33d9b3)
+![simresults](https://github.com/user-attachments/assets/8a2e2fa8-2a96-4c12-84ea-4aeeaa6227b8)
 
 ## Test Log
 
