@@ -339,7 +339,7 @@ module axi_lite_memory #(parameter DW = 32)
         end
     end
     always @(posedge ACLK)begin
-        if(r_c_state == WCOMPUTE)begin
+        if(r_c_state == RCOMPUTE)begin
             case(read_addr[7:6])
                     2'b00 : begin
                         if(check_data == S_AXIL_RDATA)begin
@@ -370,7 +370,7 @@ module axi_lite_memory #(parameter DW = 32)
                             r_resp <= 2'b00;
                         end
                         else begin
-                            b_resp <= 2'b10;
+                            r_resp <= 2'b10;
                         end
                     end
             endcase
